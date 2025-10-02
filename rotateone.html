@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotating Circle Activity</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+
+    .center-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #3498db;
+      position: relative;
+    }
+
+    .orbit {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate 5s linear infinite;
+    }
+
+    .small-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #e74c3c;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes rotate {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="center-circle"></div>
+  <div class="orbit">
+    <div class="small-circle"></div>
+  </div>
+</body>
+</html>
